@@ -13,6 +13,7 @@
 html{
     font-size: 62.5%;
     box-sizing: border-box;
+    scroll-snap-type: y mandatory;
 }
 
 *, *:before, *:after {
@@ -55,6 +56,19 @@ h1,h2,h3{
     border-radius: .5rem; /*hacer las esquinas redondeadas*/
     width: 90%;
     text-align: center;
+    border: none;
+}
+
+@media (min-width: 768px) {
+    .boton{
+        width: auto;
+    }
+    
+}
+
+.boton:hover{
+    cursor:pointer;
+
 }
 
 .sombra{
@@ -81,6 +95,27 @@ h1,h2,h3{
     width: 120rem;
     margin: 0 auto 0 auto; /*arriba, derecha, abajo, izquierda*/
 }
+
+/* UTILIDADES */
+.W-100{
+    width: 100%;
+}
+
+@media (min-width: 768px) {
+    .W-100{
+        width: auto;
+    }
+    
+}
+
+.flex{
+    display: flex;
+}
+
+.alinear-derecha{
+    justify-content: flex-end;
+}
+
 
 
 
@@ -152,3 +187,134 @@ h1,h2,h3{
     display: flex; /*pone los elementos uno junto al otro*/
     align-items: flex-end; /*alinear verticalmente*/
 }
+
+/* SCROLL SNAP */
+.servicios,
+.navegacion-principal,
+.formulario
+{
+    scroll-snap-align: center;
+    scroll-snap-stop: always;
+}
+
+/* SERVICIOS */
+@media (min-width: 768px) {
+    .servicios{
+        display: grid; /* habilitar grip */
+        grid-template-columns: repeat(3, 1fr);/* acceder a las dimensiones de izquierda y derecha  tambien puede ser grid-template-columns: 1fr 1fr 1fr o 33.3% 33.3% 33.3% */
+        column-gap: 2rem; /* hacer separacion de las columnas */
+        /*
+        grid: 200 px 800px / 300px 300 px;
+         es lo mismo que template */
+    }
+    
+}
+
+.servicio{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+
+
+}
+
+.servicio p{
+    line-height: 2; /* Agregar interlineado a los parrafos */
+    text-align: center;
+}
+
+.servicio h3{
+    color: var(--secundario);
+    font-weight: bold;
+    
+}
+
+.servicio .iconos{
+    height: 15rem;
+    width: 15rem;
+    background-color: var(--primario);
+    border-radius: 50%;
+    display: flex;  /* poner elementos uno al lados el otro */
+    justify-content: space-evenly; /* centrar el contenido */
+    align-items: center; /* centrar los elementos */
+}
+
+
+/* CONTACTO */
+.formulario{
+    background-color: var(--gris);
+    width: min(60rem,100%); /* utiliza el valor mas pequeño*/
+    margin: 0 auto; /* se utiliza margin 0 auto en un elemento cuyo padre no es un display flex*/
+    padding: 2rem;
+    border-radius: 2rem;
+}
+
+.formulario fieldset{
+    border: none;
+    
+}
+
+.formulario legend{
+
+    text-align: center;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-bottom: 2rem;
+    color: var(--primario);
+}
+
+@media (min-width: 768px) {
+    .contenedor-campos{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows:auto auto 20rem ;
+        column-gap: 1rem; /* separacion de columnas */
+    }
+    
+}
+
+.campo:nth-child(3),
+.campo:nth-child(4){
+    grid-column: 1 / 3; 
+    /* sirve para seleccionar un campo en especifico y colocarlo en el orden que se desse */
+
+}
+
+.campo{
+    margin-bottom: 1rem;
+}
+
+.campo label{
+    color: var(--blanco);
+    font-weight: bold;
+    margin-bottom: 5rem;
+    display: block;
+}
+
+
+/* 
+.campo input[type="text"] {
+    background-color: red;
+ */
+
+.campo textarea{
+    height: 20rem;
+
+}
+
+.input-text{
+    width: 100%;
+    border: none;
+    padding: 1.5rem;
+    border-radius: 1.5rem;
+}
+
+/* FOOTER */
+
+.footer{
+
+    text-align: center;
+}
+
