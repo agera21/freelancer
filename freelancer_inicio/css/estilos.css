@@ -1,0 +1,154 @@
+:root{
+    --blanco: #ffffff;
+    --oscuro: #212121;
+    --primario:#FFC107;
+    --secundario:#0097A7;
+    --gris:#757575;
+    --gris-claro:#757575;
+
+
+}
+
+/* GLOBALES */
+html{
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}  /* selecciona todos los elementos del html para que no afecte el tamaño de las cajas*/
+
+body{
+    font-size: 16px; /* 1rem=10px*/
+    font-family: 'Krub', sans-serif;
+    background-image:linear-gradient(to top,var(--gris-claro) 0%, var(--blanco) 90%) ;
+
+}
+
+h1{
+    font-size: 3.8rem; 
+}
+ 
+h2{
+    font-size: 2.8rem; 
+}
+   
+h3{
+    font-size: 1.8rem; 
+}
+
+h1,h2,h3{
+    text-align: center ;
+}
+
+
+.boton{
+    background-color: var(--secundario);
+    color: var(--blanco);
+    padding: 1rem 3rem;
+    margin-top: 1rem;
+    font-size: 2rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    border-radius: .5rem; /*hacer las esquinas redondeadas*/
+    width: 90%;
+    text-align: center;
+}
+
+.sombra{
+    -webkit-box-shadow: 0px 5px 15px 0px rgba(112,112,112,0.5);
+    -moz-box-shadow: 0px 5px 15px 0px rgba(112,112,112,0.5);
+    box-shadow: 0px 5px 15px 0px rgba(112,112,112,0.5);
+    background-color: var(--blanco);
+    padding: 2rem;
+    border-radius: 1rem;
+
+    
+
+}
+
+
+/* TIPOGRAFIA */
+.titulo span{
+    font-size: 2rem;
+    color: blue;
+
+}
+
+.contenedor{
+    width: 120rem;
+    margin: 0 auto 0 auto; /*arriba, derecha, abajo, izquierda*/
+}
+
+
+
+/* NAVEGACION PRINCIPAL */
+.nav-bg{
+    background-color:var(--secundario);
+
+}
+
+
+.navegacion-principal{
+
+    display: flex;
+    justify-content: space-between;
+}
+
+.navegacion-principal a{
+    color: var(--blanco);
+    text-decoration: none;
+    font-size: 2rem;
+    font-weight: 700;
+    padding: 1rem; /*Engordar el enlace*/ 
+
+}
+.navegacion-principal a:hover{
+    background-color: var(--primario);
+    color: var(--oscuro);
+
+}
+@media(min-width: 768px){ 
+    .navegacion-principal{
+        flex-direction: row;
+        justify-content: space-between;
+    }
+  
+}
+
+
+/* HERO */
+.hero{
+    background-image: url("../img/hero.jpg"); /*agregar una imagen*/
+    background-repeat: no-repeat; /*no repetir imagen*/
+    background-size: cover; /*rellenar el espacio de la pagina haciendo mas grande la imagen */
+    height: 45rem; /*para la altura*/
+    position: relative; /*para posicionar contenido el padre siempre debe de estar en relative*/
+    margin-bottom: 2rem; /* Dar espacio */
+}
+
+.contenido-hero{
+    position: absolute;
+    background-color: rgb(0 0 0 / 60%); /*para definir la transparencia al 60%*/
+    width: 100%;
+    height: 100%;
+    /*se ponen left, right, bottom y top en 0px para que tome toda la posicion que se definio en us padre, otra forma es co width y height al 100%*/
+   
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /*centrar el contenido verticalmente*/
+   
+}
+.contenido-hero h2,
+.contenido-hero p{
+    color: var(--blanco);
+}
+
+.ubicacion{
+    display: flex; /*pone los elementos uno junto al otro*/
+    align-items: flex-end; /*alinear verticalmente*/
+}
